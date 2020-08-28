@@ -42,7 +42,7 @@ num_of_remainder = int(n) - num_of_lowercase - num_of_uppercase - num_of_digits 
 ```
 
 ## `chars_dict` explained
-This dictionary contains strings of ASCII characters. The corresponding `counter` is decremented each time a specific character type is concatenated to the string, and by the time the string reaches length *n*, all counters reach 0. For example, if *n* is 100, `num_of_lowercase` would be 20 at the start, and by the time we finished building the string, it reaches 0.
+This dictionary contains strings of ASCII characters. A specific `counter` is decremented each time a corresponding character type is concatenated to the string, and by the time the string reaches length *n*, all counters reach 0. For example, if *n* is 100, `num_of_lowercase` would be 20 at the start, and by the time we finished building the string, it reaches 0.
 
 ```python
 mixed = list(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation)
