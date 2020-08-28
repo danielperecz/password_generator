@@ -48,8 +48,8 @@ def main():
     while i < n:
         random_choice = random.randint(1, 5)
 
-        # Below block of code ensures that the random_choice's counter is non zero by the time line 60 is reached.
-        # This code block ensures all counters eventually reach 0.
+        # Below block of code ensures that the selected random_choice's counter is non zero by the time line 60 is
+        # reached. This code block ensures all counters eventually reach 0.
         if chars_dict[random_choice]["counter"] == 0:
             while True:
                 random_choice = random.randint(1, 5)
