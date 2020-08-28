@@ -1,5 +1,5 @@
 # Password Generator
-Generate a password of length *n*.
+Generate a random password of length *n*.
 
 ## Usage
 The script requires one command line argument in the form `generate_pw.py n`. *n* being an integer.
