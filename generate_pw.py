@@ -20,10 +20,10 @@ def main():
         sys.exit()
 
     # Here we calculate the number of characters of each type that will exist in the final string.
-    # APPROXIMATELY 30% of the string will consist of lowercase, 30% of uppercase, 20% of digits, and 20% punctuation.
-    # However float(n) * 0.3 results in a float, and the variables have to be integers. Which means we ROUND DOWN
-    # using int(n). So 1.8 becomes 1. This means that the variables added up, will be LESS than n, and we fix this
-    # using the num_of_remainder variable, which is simply n minus all nums.
+    # At least 20% of the string will consist of lowercase, 20% of uppercase, 10% of digits, and 20% punctuation.
+    # However float(n) * 0.2 results in a float, and the variables have to be integers. Which means we ROUND DOWN
+    # using int(n). So 1.8 becomes 1. This means that the variables added up, will be LESS than n, and we account for
+    # this using the num_of_remainder variable, which is simply n minus all nums.
     num_of_lowercase = int(float(n) * 0.2)
     num_of_uppercase = int(float(n) * 0.2)
     num_of_digits = int(float(n) * 0.1)
@@ -34,7 +34,7 @@ def main():
     mixed = list(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation)
     random.shuffle(mixed)
 
-    d = {
+    chars_dict = {
         1: {"counter": num_of_lowercase, "chars": string.ascii_lowercase},
         2: {"counter": num_of_uppercase, "chars": string.ascii_uppercase},
         3: {"counter": num_of_digits, "chars": string.digits},
@@ -49,16 +49,15 @@ def main():
         random_key = random.randint(1, 5)
 
         # Below block of code ensures that the selected key's num counter is non zero.
-        if d[random_key]["counter"] == 0:
+        if chars_dict[random_key]["counter"] == 0:
             while True:
                 random_key = random.randint(1, 5)
-                if d[random_key]["counter"] != 0:
+                if chars_dict[random_key]["counter"] != 0:
                     break
 
-        # Decrement counter, and add the random selection from d[random_key][1] to s.
-        d[random_key]["counter"] -= 1
-        s += random.choice(d[random_key]["chars"])
-
+        # Decrement counter, and add the random selection from chars_dict[random_key]["chars"] to s.
+        chars_dict[random_key]["counter"] -= 1
+        s += random.choice(chars_dict[random_key]["chars"])
         i += 1
 
     print(s)
