@@ -46,18 +46,19 @@ def main():
     s = ""
     i = 0
     while i < n:
-        random_key = random.randint(1, 5)
+        random_choice = random.randint(1, 5)
 
-        # Below block of code ensures that the selected key's num counter is non zero.
-        if chars_dict[random_key]["counter"] == 0:
+        # Below block of code ensures that the random_choice's counter is non zero by the time line 60 is reached.
+        # This code block ensures all counters eventually reach 0.
+        if chars_dict[random_choice]["counter"] == 0:
             while True:
-                random_key = random.randint(1, 5)
-                if chars_dict[random_key]["counter"] != 0:
+                random_choice = random.randint(1, 5)
+                if chars_dict[random_choice]["counter"] != 0:
                     break
 
-        # Decrement counter, and add the random selection from chars_dict[random_key]["chars"] to s.
-        chars_dict[random_key]["counter"] -= 1
-        s += random.choice(chars_dict[random_key]["chars"])
+        # Decrement counter, and add the random selection from chars_dict[random_choice]["chars"] to s.
+        chars_dict[random_choice]["counter"] -= 1
+        s += random.choice(chars_dict[random_choice]["chars"])
         i += 1
 
     print(s)
