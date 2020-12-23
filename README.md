@@ -1,8 +1,8 @@
-# Password Generator
-Generate a random password of length *n*.
+# String Generator
+Generate a random string of length *n*. Please note this is not a fancy cryptographic code; in fact it's whacky. This excercise was done purely for fun / as an experiment. However I do use this generator for creating passwords, it's perfectly fine for that purpose.
 
 ## Usage
-The script requires one command line argument in the form `generate_pw.py n`. *n* being an integer.
+The script requires one command line argument in the form `genstr.py n`. *n* being an integer.
 
 ## Example output
 *n* = 16
@@ -29,8 +29,8 @@ L.2\ZHTw,p$hwkWuuRV/++n{ZAu!h'y:?]ax}UHn!R$GR|Y]k]z5,.qz-pl+XNu'nQz=:NJ3I#[lyQbw
 /j\jQ!68o"WgrKEm{]%),+P=Pz^aJ%C]"qfk@OP~;mlG5[THQUs<@r5eYI>Hat,js15jtaO!%GQu-W$znD06iaM
 ```
 
-## Password variety
-The password is made up of a combination of lowercase, uppercase, digits, and punctuation characters. In order to ensure the password has enough variety there is a set number of minimum characters required of each type (lowercase, uppercase, etc.). For example, at the moment the minimum number of lowercase characters that must be present in the resulting password is 20% of *n*.
+## String variety
+The string is made up of a combination of lowercase, uppercase, digits, and punctuation characters. In order to ensure the string has enough variety there is a set number of minimum characters required of each type (lowercase, uppercase, etc.). For example, at the moment the minimum number of lowercase characters that must be present in the resulting string is 20% of *n*.
 
 **Minimum character counts**
 ```python
@@ -58,4 +58,4 @@ chars_dict = {
 ```
 
 ## Further notes
-You can modify the resulting string's character variety by modifying the float values mentioned in **Password variety**. I found the greatest character variety with the current float values. Increasing `num_of_lowercase` from 0.2 to 0.3 results in a noticeble number of consecutive lowercase characters at the very end of the string (if *n* is large enough).
+You can modify the resulting string's character variety by modifying the float values mentioned in **String variety**. I found the greatest character variety with the current float values. Increasing `num_of_lowercase` from 0.2 to 0.3 results in a noticeble number of consecutive lowercase characters at the very end of the string (if *n* is large enough).
